@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Das-Meme Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-img">
+    <header>
+        <h1>DasMeme Generator</h1>
+        <p>For Small Words</p>
+    </header>
+
+    <div class="container flex">
+        <form class="form flex">
+            <label for="top-text">Top Text <span class="optional-word"> (optional) </span></label>
+            <input type="text" id="top-text" name="topText"><br><br>
+
+            <label for="bottom-text">Bottom Text <span class="optional-word"> (optional) </span></label>
+            <input type="text" id="bottom-text" name="bottomText"><br><br>
+
+            <input type="file" id="choose-file" title="Add Image File" name="choose a file"><br>
+            <img src="" alt="" id="image">
+            <label for="image-url">Image Link/URL:</label>
+            <input type="text" id="image-url" name="imageUrl"><br>
+
+            <button type="submit" id="generate-btn"> Generate Meme </button>
+            <button type="reset" title="reset">Reset</button>
+            <p id="generated-text">
+                Successfully Generated Meme <br>
+                <img src="media/fast-forward.gif" class="fast-forward" alt="">
+                Check below 
+                <img src="media/fast-forward.gif" class="fast-forward" alt="">
+            </p>
+        </form>
+
+        <div src="" alt="Meme" id="generated-meme">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <button type="button" id="download-btn">
+            <span class="flex">
+                <p>Download Meme </p>
+                <img src="media/download.gif" class="download-img" alt="">    
+            </span>
+        </button>
+
+    </div>
+    <footer>
+       <p id="foot-para">&copy;2024 Reserved & Developed by <a href="https://praveendas.netlify.app/" id="foot-link">PraviDas</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
