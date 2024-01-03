@@ -16,6 +16,7 @@ document.querySelector('form').addEventListener('submit', function (e) {
   const bottomText = document.getElementById('bottom-text').value;
   const imageFile = document.getElementById('choose-file');
   const imageUrl = document.getElementById('image-url').value;
+  const generatedMeme = document.getElementById('generated-meme');
 
   //  INPUT VALIDATIONS
   if (topText === '' && bottomText === '') {
@@ -24,19 +25,19 @@ document.querySelector('form').addEventListener('submit', function (e) {
     return;
   } else if (imageFile.files.length === 0 && imageUrl === '') {
     alert(`Please Add Image-File or Image-Url ${Vname}`);
-    return;
   } else if (imageFile.files.length !== 0 && imageUrl === '') {
     console.log("imageFile is added");
     createImageViaFile(imageFile.files[0]);
-    return;
   } else if (imageFile.files.length === 0 && imageUrl !== '') {
     console.log("imageUrl is added");
     createImageViaUrl(imageUrl);
-    return;
   } else {
-    console.log("else condn is printed!...");
+    console.error("No Operation Instructed.")
     return;
   }
+
+  generatedMeme.scrollIntoView({ behavior: 'smooth' })
+  console.log("scrolling is done")
 });// forms eventlistener ends
 
 // Get the button element by its ID
@@ -46,22 +47,27 @@ const canvas = document.getElementById('canvas');
 // Add a click event listener to the button
 download_btn.addEventListener('click', () => {
   // Call the downloadImage function with the canvas as an argument
-  canvas.scrollIntoView({ behavior: 'smooth' });
+  
   downloadImage(canvas, 'Das_memes.png')
   .then(() => {
     console.log('The image has been downloaded');
   })
   .catch(err => {
     console.log('Error downloading image: ', err);
-  });
-  
+  });  
 });
 
+// Resetting page with button
+const reset_btn = document.getElementById("reset-btn");
+reset_btn.addEventListener("click",()=> {
+  location.reload()
+  alert("Are You Ok With Page Resetting ?")
+  console.log("Page Resetted.")
+}) 
 
 //createImageViaFile function starts
 function createImageViaFile(convertingImage) {
   const imageFilePath = URL.createObjectURL(convertingImage);
-  console.log(imageFilePath, "trndfbe");
   const image = new Image();
   image.src = imageFilePath;
 
