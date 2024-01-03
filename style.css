@@ -1,622 +1,309 @@
-
-html{
-    width: 100vw;
-    overflow-x: hidden;
-    outline: 0;
-    padding: 0;
-    margin: 0;
+html {
+  width: 100vw;
+  overflow-x: hidden;
+  outline: 0;
+  padding: 0;
+  margin: 0;
 }
 body {
-    margin: 0;
-    outline: 0;
-    padding: 0;
-    position: relative;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
 
-    box-sizing: border-box;
-    overflow-x: hidden;
-    font-family: Arial, sans-serif;
-    text-align: center;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
 /*  GLOBALLY STYLING */
-.flex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.bg-img{
-    background-image: url("media/bg-large.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat:no-repeat;
+.bg-img {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 /*--------------------*/
-header{
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    overflow-y: auto;
-    box-sizing: border-box;
-    background-color: #161616f7;
+header {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  box-sizing: border-box;
+  background-color: #161616f7;
 }
 header h1 {
-    font-size: clamp(24px,2rem,36px);
-    text-align: center;
-    margin-bottom: 0;
-    color: #fff;;
+  font-size: clamp(24px, 2rem, 36px);
+  text-align: center;
+  margin-bottom: 0;
+  color: #fff;
 }
-header p{
-    font-size: 14px;
-    width: max-content;
-    margin: auto;
-    margin-top: 0px;
-    margin-bottom: 10px;
-    font-style: italic;
-    font-weight: bold;
-    color: steelblue;
+header p {
+  font-size: 14px;
+  width: max-content;
+  margin: auto;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-style: italic;
+  font-weight: bold;
+  color: steelblue;
 }
 
 .container {
-    width: 100vw;
-    outline: 0;
-    overflow-x: hidden;
-    margin: auto;
-    margin-bottom: 30px;
-    padding-bottom: 10px;
-    padding: 0;
-    flex-direction: column;
+  width: 100vw;
+  outline: 0;
+  overflow-x: hidden;
+  margin: auto;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  padding: 0;
+  flex-direction: column;
 }
 
 form {
-    max-width: 600px;
-    min-width: 250px;
-    overflow-wrap:break-word ;
-    background-image: linear-gradient(90deg, rgb(159 92 99),#4d8086);
-    flex-direction: column;
-    padding: 20px 5px;
-    margin: 20px auto;
-    border-radius: 20px;
+  max-width: 600px;
+  min-width: 250px;
+  overflow-wrap: break-word;
+  background-image: linear-gradient(90deg, rgb(159 92 99), #4d8086);
+  flex-direction: column;
+  padding: 20px 5px;
+  margin: 20px auto;
+  border-radius: 20px;
 }
 
 label {
-    font-weight: bold;
-    margin-bottom: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 input[type="text"] {
-    width: 90%;
-    margin: 5px auto;
-    padding: 10px;
-    background-color: #d8d6d68a;
-    font-size: 18px;
-    border: 2px solid #9b9b9b8a;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  margin: 5px auto;
+  padding: 10px;
+  background-color: #d8d6d68a;
+  font-size: 18px;
+  border: 2px solid #9b9b9b8a;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 input[type="text"]:hover {
-    border: 2px solid #999999;
-    transition: border 0.2s ease-in-out;
+  border: 2px solid #999999;
+  transition: border 0.2s ease-in-out;
 }
 input[type="text"]:focus {
-    outline: none;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgb(128, 128, 128);
+  outline: none;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgb(128, 128, 128);
 }
-.optional-word{
-    font-size: small;
-    color:#000000b1;
-    font-style:italic ;
-    font-weight: lighter;
-}
-
-.input-image-box{
-    border: 1px solid #ddd;
-    padding: 10px;
+.optional-word {
+  font-size: small;
+  color: #000000b1;
+  font-style: italic;
+  font-weight: lighter;
 }
 
-button[type="submit"],button[type="reset"]{
-    background-color: #333;
-    color: #ccc;
-    margin: 5px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.5s ease;
-}
-button[type="reset"]{
-    background-color: steelblue;
-    border: 1px solid white;
-    transition: none;
-}
-#choose-file{
-    width: 220px;
-    font-size: 1rem;
-}
-.or-para{
-    margin: 2px;
-}
-button[type="submit"]:hover ,#download-btn:hover{
-    background-color: #111;
-    color: #fff;
-}
-button[type="submit"]:focus ,#download-btn:focus{
-    box-shadow: 1px 2px 10px #000;
-}
-button[type="reset"]:active{
-    background-color: red;
+.input-image-box {
+  border: 1px solid #ddd;
+  padding: 10px;
 }
 
-#generated-text{
-    display: none;
-    text-align: center;
-    opacity: 1;
-    transition: opacity 1s ease-in-out ;
-    font-size: clamp(20px,3vw,36px);
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.393);
-    background-clip: text;
-    background-image: url(media/bg-small.jpg);
-    background-attachment: fixed;
-    object-fit: cover;
-    text-shadow: 2px 2px 10px black;
-    
+button[type="submit"],
+button[type="reset"] {
+  background-color: #333;
+  color: #ccc;
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
 }
-.fast-forward{
-    width: 35px;
-    filter: blur(0.5px);
-    object-position:bottom;
-    mix-blend-mode: color-burn;
-    transform: rotate(90deg);
-}   
+button[type="reset"] {
+  background-color: steelblue;
+  border: 1px solid white;
+  transition: none;
+}
+#choose-file {
+  width: 220px;
+  font-size: 1rem;
+}
+.or-para {
+  margin: 2px;
+}
+button[type="submit"]:hover,
+#download-btn:hover {
+  background-color: #111;
+  color: #fff;
+}
+button[type="submit"]:focus,
+#download-btn:focus {
+  box-shadow: 1px 2px 10px #000;
+}
+button[type="reset"]:active {
+  background-color: red;
+}
 
-#input-img-box{
-    display: none;
-    object-fit: contain;    
-    background-color: lightblue;
+#generated-text {
+  display: none;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  font-size: clamp(20px, 3vw, 36px);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.393);
+  background-clip: text;
+  background-image: url(media/bg-small.jpg);
+  background-attachment: fixed;
+  object-fit: cover;
+  text-shadow: 2px 2px 10px black;
 }
-#input-img-text{
-    display: none;
-    text-align: center;
+.fast-forward {
+  width: 35px;
+  filter: blur(0.5px);
+  object-position: bottom;
+  mix-blend-mode: color-burn;
+  transform: rotate(90deg);
 }
-#input-img1,#input-img2{
-    display: none;
-    width: 100%;
+
+#input-img-box {
+  display: none;
+  object-fit: contain;
+  background-color: lightblue;
+}
+#input-img-text {
+  display: none;
+  text-align: center;
+}
+#input-img1,
+#input-img2 {
+  display: none;
+  width: 100%;
 }
 
 #generated-meme {
-    display:none;
-    opacity: 0;
-    height: auto;
-    margin: 5px auto;
-    box-sizing: border-box;
-
+  display: none;
+  opacity: 0;
+  height: auto;
+  margin: 5px auto;
+  box-sizing: border-box;
 }
-#canvas{
-    width: 100%;
-    min-width: 250px;
-    max-width: 300px;
-    aspect-ratio: 1/1;
-    object-fit: contain;
-    height: max-content;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#download-btn{
-    background-color: #333;
-    padding: 2px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: backgroundColor 1s ease;
-
-    display: none;
-    flex-direction: row;
-    opacity: 0;
-    margin-bottom: 10px;
-}
-#download-btn p{
-    display: inline;
-    color: #ddd;
-    font-weight: 500;
-    font-size: 0.8rem;
-    html{
-        width: 100vw;
-        overflow-x: hidden;
-        outline: 0;
-        padding: 0;
-        margin: 0;
-    }
-    body {
-        margin: 0;
-        outline: 0;
-        padding: 0;
-        position: relative;
-        overflow-x: hidden;
-        overflow-y: scroll;
-    
-        height: 100vh;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-        text-align: center;
-    }
-    /*  GLOBALLY STYLING */
-    .flex{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .bg-img{
-        background-image: url("media/bg-large.jpg");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        background-repeat:no-repeat;
-    }
-    /*--------------------*/
-    header{
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        overflow-y: auto;
-        box-sizing: border-box;
-        background-color: #161616f7;
-    }
-    header h1 {
-        font-size: clamp(24px,2rem,36px);
-        text-align: center;
-        margin-bottom: 0;
-        color: #fff;;
-    }
-    header p{
-        font-size: 14px;
-        width: max-content;
-        margin: auto;
-        margin-top: 0px;
-        margin-bottom: 10px;
-        font-style: italic;
-        font-weight: bold;
-        color: steelblue;
-    }
-    
-    .container {
-        width: 100vw;
-        outline: 0;
-        overflow-x: hidden;
-        margin: auto;
-        margin-bottom: 30px;
-        padding-bottom: 10px;
-        padding: 0;
-        flex-direction: column;
-    }
-    
-    form {
-        max-width: 600px;
-        min-width: 250px;
-        overflow-wrap:break-word ;
-        background-image: linear-gradient(90deg, rgb(159 92 99),#4d8086);
-        flex-direction: column;
-        padding: 20px 5px;
-        margin: 20px auto;
-        border-radius: 20px;
-    }
-    
-    label {
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-    
-    input[type="text"] {
-        width: 90%;
-        margin: 5px auto;
-        padding: 10px;
-        background-color: #d8d6d68a;
-        font-size: 18px;
-        border: 2px solid #9b9b9b8a;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    input[type="text"]:hover {
-        border: 2px solid #999999;
-        transition: border 0.2s ease-in-out;
-    }
-    input[type="text"]:focus {
-        outline: none;
-        background-color: #ffffff;
-        box-shadow: 0 2px 4px rgb(128, 128, 128);
-    }
-    .optional-word{
-        font-size: small;
-        color:#000000b1;
-        font-style:italic ;
-        font-weight: lighter;
-    }
-    
-    .input-image-box{
-        border: 1px solid #ddd;
-        padding: 10px;
-    }
-    
-    button[type="submit"],button[type="reset"]{
-        background-color: #333;
-        color: #ccc;
-        margin: 5px;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.5s ease;
-    }
-    button[type="reset"]{
-        background-color: steelblue;
-        border: 1px solid white;
-        transition: none;
-    }
-    #choose-file{
-        width: 220px;
-        font-size: 1rem;
-    }
-    .or-para{
-        margin: 2px;
-    }
-    button[type="submit"]:hover ,#download-btn:hover{
-        background-color: #111;
-        color: #fff;
-    }
-    button[type="submit"]:focus ,#download-btn:focus{
-        box-shadow: 1px 2px 10px #000;
-    }
-    button[type="reset"]:active{
-        background-color: red;
-    }
-    
-    #generated-text{
-        display: none;
-        text-align: center;
-        opacity: 1;
-        transition: opacity 1s ease-in-out ;
-        font-size: clamp(20px,3vw,36px);
-        font-weight: 600;
-        color: rgba(255, 255, 255, 0.393);
-        background-clip: text;
-        background-image: url(media/bg-small.jpg);
-        background-attachment: fixed;
-        object-fit: cover;
-        text-shadow: 2px 2px 10px black;
-        
-    }
-    .fast-forward{
-        width: 35px;
-        filter: blur(0.5px);
-        object-position:bottom;
-        mix-blend-mode: color-burn;
-        transform: rotate(90deg);
-    }   
-    
-    #input-img-box{
-        display: none;
-        object-fit: contain;    
-        background-color: lightblue;
-    }
-    #input-img-text{
-        display: none;
-        text-align: center;
-    }
-    #input-img1,#input-img2{
-        display: none;
-        width: 100%;
-    }
-    
-    #generated-meme {
-        display:none;
-        opacity: 0;
-        height: auto;
-        margin: 5px auto;
-        box-sizing: border-box;
-    
-    }
-    #canvas{
-        width: 100%;
-        min-width: 250px;
-        max-width: 300px;
-        aspect-ratio: 1/1;
-        object-fit: contain;
-        height: max-content;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    
-    #download-btn{
-        background-color: #333;
-        padding: 2px 10px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: backgroundColor 1s ease;
-    
-        display: none;
-        flex-direction: row;
-        opacity: 0;
-        margin-bottom: 10px;
-    }
-    #download-btn p{
-        display: inline;
-        color: #ddd;
-        font-weight: 500;
-        font-size: 0.8rem;
-    }
-    #download-btn:active{
-        background-color: darkslategray;
-        color: #fff;
-    }
-    .download-img{
-        width: 30px;
-    }
-    
-    @keyframes imgAnim{
-        from{
-            width: 0px;
-        }
-        to{
-            width: 300px;
-        }
-    }
-    
-    #canvasbox{
-        width:50vw;
-        max-width: 600px;
-        min-width: 100px;
-    
-        height: max-content;
-        aspect-ratio: 1/1;
-    }
-    footer{
-        width: 100%;
-        padding: 1px 2px;
-        background-color: black;
-        position: sticky;
-        bottom: 0;
-    }
-    #foot-para{
-        font-size: 0.8rem;
-        color:lavender;
-    }
-    #foot-link{
-        color: steelblue;
-        text-decoration: none;
-    }
-    
-    
-    /*//////////////////////////////////////// */
-    /*//////////////////////////////////////// */
-    /*  MOBILE SMALL SCREEN */
-    @media screen and (max-width:320px) {
-        .bg-img{
-            background-image: url(media/bg-small.jpg);
-        }
-        form{
-            width: 95%;
-        }
-        input{
-            margin: 2px auto;
-        }
-        
-    }
-    /*  LARGE MOBILE SCREEN */
-    @media screen and (min-width:320px) and (max-width:768px) {
-        .bg-img{
-            background-image: url(media/bg-medium.jpg);
-        }
-        form{
-            width: 95%;
-        }
-        input{
-            margin: 2px auto;
-        }
-        
-    }
-    /*  TABLET SCREEN */
-    @media screen and (min-width:768px) and (max-width:1024px) {
-        .bg-img{
-            background-image: url(media/bg-large.jpg);
-        }
-        form{
-            width: 70%;
-        }
-    }
-    /* DESKTOP AND LARGER SCREEN */
-    @media screen and (min-width:1024px){
-        .bg-img{
-            background-image: url(media/bg-orginial\ xlarge.jpg);
-        }
-        form{
-            width: 50%;
-        }
-    }
-    
-}
-#download-btn:active{
-    background-color: darkslategray;
-    color: #fff;
-}
-.download-img{
-    width: 30px;
+#canvas {
+  width: 100%;
+  min-width: 250px;
+  max-width: 300px;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  height: max-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes imgAnim{
-    from{
-        width: 0px;
-    }
-    to{
-        width: 300px;
-    }
+#download-btn {
+  background-color: #333;
+  padding: 2px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: backgroundColor 1s ease;
+
+  display: none;
+  flex-direction: row;
+  opacity: 0;
+  margin-bottom: 10px;
+}
+#download-btn p {
+  display: inline;
+  color: #ddd;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+#download-btn:active {
+  background-color: darkslategray;
+  color: #fff;
+}
+.download-img {
+  width: 30px;
 }
 
-#canvasbox{
-    width:50vw;
-    max-width: 600px;
-    min-width: 100px;
-
-    height: max-content;
-    aspect-ratio: 1/1;
-}
-footer{
-    width: 100%;
-    padding: 1px 2px;
-    background-color: black;
-    position: absolute;
-    bottom: 0;
-}
-#foot-para{
-    font-size: 0.8rem;
-    color:lavender;
-}
-#foot-link{
-    color: steelblue;
-    text-decoration: none;
+@keyframes imgAnim {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 300px;
+  }
 }
 
+#canvasbox {
+  width: 50vw;
+  max-width: 600px;
+  min-width: 100px;
+
+  height: max-content;
+  aspect-ratio: 1/1;
+}
+footer {
+  width: 100%;
+  padding: 1px 2px;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+}
+#foot-para {
+  font-size: 0.8rem;
+  color: lavender;
+}
+#foot-link {
+  color: steelblue;
+  text-decoration: none;
+}
 
 /*//////////////////////////////////////// */
 /*//////////////////////////////////////// */
 /*  MOBILE SMALL SCREEN */
-@media screen and (max-width:320px) {
-    .bg-img{
-        background-image: url(media/bg-small.jpg);
-    }
-    form{
-        width: 95%;
-    }
-    input{
-        margin: 2px auto;
-    }
-    
+@media screen and (max-width: 320px) {
+  .bg-img {
+    background-image: url(media/bg-small.jpg);
+  }
+  form {
+    width: 95%;
+  }
+  input {
+    margin: 2px auto;
+  }
 }
 /*  LARGE MOBILE SCREEN */
-@media screen and (min-width:320px) and (max-width:768px) {
-    .bg-img{
-        background-image: url(media/bg-medium.jpg);
-    }
-    form{
-        width: 95%;
-    }
-    input{
-        margin: 2px auto;
-    }
-    
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .bg-img {
+    background-image: url(media/bg-medium.jpg);
+  }
+  form {
+    width: 95%;
+  }
+  input {
+    margin: 2px auto;
+  }
 }
 /*  TABLET SCREEN */
-@media screen and (min-width:768px) and (max-width:1024px) {
-    .bg-img{
-        background-image: url(media/bg-large.jpg);
-    }
-    form{
-        width: 70%;
-    }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .bg-img {
+    background-image: url(media/bg-large.jpg);
+  }
+  form {
+    width: 70%;
+  }
 }
 /* DESKTOP AND LARGER SCREEN */
-@media screen and (min-width:1024px){
-    .bg-img{
-        background-image: url(media/bg-orginial\ xlarge.jpg);
-    }
-    form{
-        width: 50%;
-    }
+@media screen and (min-width: 1024px) {
+  .bg-img {
+    background-image: url(media/bg-orginial\ xlarge.jpg);
+  }
+  form {
+    width: 50%;
+  }
 }
