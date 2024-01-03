@@ -10,6 +10,8 @@ body {
     margin: 0;
     outline: 0;
     padding: 0;
+    position: relative;
+
     box-sizing: border-box;
     overflow-x: hidden;
     font-family: Arial, sans-serif;
@@ -58,7 +60,8 @@ header p{
     width: 100vw;
     outline: 0;
     overflow-x: hidden;
-    margin: 0;
+    margin: auto;
+    margin-bottom: 30px;
     padding-bottom: 10px;
     padding: 0;
     flex-direction: column;
@@ -243,8 +246,11 @@ button[type="reset"]:active{
     aspect-ratio: 1/1;
 }
 footer{
+    width: 100%;
     padding: 1px 2px;
     background-color: black;
+    position: absolute;
+    bottom: 0;
 }
 #foot-para{
     font-size: 0.8rem;

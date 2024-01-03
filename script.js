@@ -26,10 +26,10 @@ document.querySelector('form').addEventListener('submit', function (e) {
   } else if (imageFile.files.length === 0 && imageUrl === '') {
     alert(`Please Add Image-File or Image-Url ${Vname}`);
   } else if (imageFile.files.length !== 0 && imageUrl === '') {
-    console.log("imageFile is added");
+    //console.log("imageFile is added");
     createImageViaFile(imageFile.files[0]);
   } else if (imageFile.files.length === 0 && imageUrl !== '') {
-    console.log("imageUrl is added");
+    //console.log("imageUrl is added");
     createImageViaUrl(imageUrl);
   } else {
     console.error("No Operation Instructed.")
@@ -37,7 +37,7 @@ document.querySelector('form').addEventListener('submit', function (e) {
   }
 
   generatedMeme.scrollIntoView({ behavior: 'smooth' })
-  console.log("scrolling is done")
+  //console.log("scrolling is done")
 });// forms eventlistener ends
 
 // Get the button element by its ID
@@ -50,10 +50,10 @@ download_btn.addEventListener('click', () => {
   
   downloadImage(canvas, 'Das_memes.png')
   .then(() => {
-    console.log('The image has been downloaded');
+    //console.log('The image has been downloaded');
   })
   .catch(err => {
-    console.log('Error downloading image: ', err);
+    //console.log('Error downloading image: ', err);
   });  
 });
 
@@ -62,7 +62,7 @@ const reset_btn = document.getElementById("reset-btn");
 reset_btn.addEventListener("click",()=> {
   location.reload()
   alert("Are You Ok With Page Resetting ?")
-  console.log("Page Resetted.")
+  //console.log("Page Resetted.")
 }) 
 
 //createImageViaFile function starts
@@ -89,7 +89,7 @@ function createImageViaFile(convertingImage) {
     generatedMeme.style.opacity = "1";
     download_btn.style.opacity = "1";
   });
-  console.log("convertingImage runned");
+  //console.log("convertingImage runned");
 }
 
 //createImageViaUrl function starts
