@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Das-Meme Generator</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="media/das logo.png" type="image/x-icon">
 </head>
 <body class="bg-img">
     <header>
         <h1>DasMeme Generator</h1>
         <p>For Small Words</p>
+        <p class="example">Text + Image = Meme</p>
     </header>
 
     <div class="container flex">
@@ -21,18 +23,19 @@
             <input type="text" id="bottom-text" name="bottomText"><br><br>
 
             <input type="file" id="choose-file" title="Add Image File" name="choose a file">
-            <p class="or-para">or</p>
+            <p class="or-para">-- or --</p>
             <label for="image-url">Image Link/URL:</label>
             <input type="text" id="image-url" name="imageUrl"><br>
 
-            <button type="submit" id="generate-btn"> Generate Meme </button>
-            <button type="reset" title="reset" id="reset-btn">Reset</button>
+
             <p id="generated-text">
                 Successfully Generated Meme <br>
                 <img src="media/fast-forward.gif" class="fast-forward" alt="">
                 Check below 
                 <img src="media/fast-forward.gif" class="fast-forward" alt="">
             </p>
+            <button type="submit" id="generate-btn"> Generate Meme </button>
+            <button type="reset" title="reset" id="reset-btn">Reset</button>
         </form>
 
         <div src="" alt="Meme" id="generated-meme">
@@ -57,11 +60,10 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-35X0VPDM8N"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-35X0VPDM8N');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-35X0VPDM8N');
     </script>
     
     <!-- Ads-->

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
 html {
   width: 100vw;
   overflow-x: hidden;
@@ -15,7 +17,8 @@ body {
   overflow-y: scroll;
 
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: 2px;
   text-align: center;
 }
 /*  GLOBALLY STYLING */
@@ -33,7 +36,7 @@ body {
 /*--------------------*/
 header {
   width: 100%;
-  padding: 0;
+  padding: 8px 1px;
   margin: 0;
   overflow-y: auto;
   box-sizing: border-box;
@@ -48,20 +51,21 @@ header h1 {
 header p {
   font-size: 14px;
   width: max-content;
-  margin: auto;
-  margin-top: 0px;
-  margin-bottom: 10px;
+  margin: 2px auto 10px ;
   font-style: italic;
   font-weight: bold;
-  color: steelblue;
+  color: #bdbdbd;
 }
-
+.example{
+  font-size: 1.1rem;
+  color: #ff5353;
+}
 .container {
   width: 100vw;
   outline: 0;
   overflow-x: hidden;
   margin: auto;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   padding-bottom: 10px;
   padding: 0;
   flex-direction: column;
@@ -70,17 +74,21 @@ header p {
 form {
   max-width: 600px;
   min-width: 250px;
+  padding: 20px 5px;
+  margin: 20px auto;
+
   overflow-wrap: break-word;
   background-image: linear-gradient(90deg, rgb(159 92 99), #4d8086);
   flex-direction: column;
-  padding: 20px 5px;
-  margin: 20px auto;
   border-radius: 20px;
 }
 
 label {
   font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 0px 5px #000;
   margin-bottom: 10px;
+  font-size: clamp(18px,2rem,26px);
 }
 
 input[type="text"] {
@@ -89,6 +97,7 @@ input[type="text"] {
   padding: 10px;
   background-color: #d8d6d68a;
   font-size: 18px;
+  letter-spacing: 1.5px;
   border: 2px solid #9b9b9b8a;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -99,11 +108,12 @@ input[type="text"]:hover {
 }
 input[type="text"]:focus {
   outline: none;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgb(128, 128, 128);
+  background-image: linear-gradient(45deg, #517e8499, #9e5c638f);
+  box-shadow: 0 2px 4px rgb(1 1 1);
 }
 .optional-word {
-  font-size: small;
+  font-size: 0.9rem;
+  text-shadow: none;
   color: #000000b1;
   font-style: italic;
   font-weight: lighter;
@@ -126,8 +136,7 @@ button[type="reset"] {
   transition: background-color 0.5s ease;
 }
 button[type="reset"] {
-  background-color: steelblue;
-  border: 1px solid white;
+  background-color: #4682b4;
   transition: none;
 }
 #choose-file {
@@ -135,10 +144,10 @@ button[type="reset"] {
   font-size: 1rem;
 }
 .or-para {
-  margin: 2px;
+  margin: 0.7rem;
+  font-size: 1.4rem;
 }
-button[type="submit"]:hover,
-#download-btn:hover {
+button[type="submit"]:hover, #download-btn:hover {
   background-color: #111;
   color: #fff;
 }
@@ -148,6 +157,11 @@ button[type="submit"]:focus,
 }
 button[type="reset"]:active {
   background-color: red;
+  box-shadow: 1px 2px 10px #000;
+  color: #fff;
+}
+button{
+  font-size: clamp(16px,1.1rem,20px);
 }
 
 #generated-text {
@@ -155,7 +169,7 @@ button[type="reset"]:active {
   text-align: center;
   opacity: 1;
   transition: opacity 1s ease-in-out;
-  font-size: clamp(20px, 3vw, 36px);
+  font-size: clamp(20px, 2rem, 30px);
   font-weight: 600;
   color: rgba(255, 255, 255, 0.393);
   background-clip: text;
@@ -255,7 +269,7 @@ footer {
   bottom: 0;
 }
 #foot-para {
-  font-size: 0.8rem;
+  font-size: clamp(16px,0.9rem,20px);
   color: lavender;
 }
 #foot-link {
@@ -271,39 +285,39 @@ footer {
     background-image: url(media/bg-small.jpg);
   }
   form {
-    width: 95%;
+    min-width: 95vw;
   }
   input {
     margin: 2px auto;
   }
 }
 /*  LARGE MOBILE SCREEN */
-@media screen and (min-width: 320px) and (max-width: 768px) {
+@media screen and (min-width: 321px) and (max-width: 768px) {
   .bg-img {
     background-image: url(media/bg-medium.jpg);
   }
   form {
-    width: 95%;
+    min-width: 95vw;
   }
   input {
     margin: 2px auto;
   }
 }
 /*  TABLET SCREEN */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
   .bg-img {
     background-image: url(media/bg-large.jpg);
   }
   form {
-    width: 70%;
+    min-width: 70vw;
   }
 }
 /* DESKTOP AND LARGER SCREEN */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .bg-img {
     background-image: url(media/bg-orginial\ xlarge.jpg);
   }
   form {
-    width: 50%;
+    min-width: 600px;
   }
 }

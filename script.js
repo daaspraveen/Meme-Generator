@@ -1,10 +1,9 @@
 //////////
-alert(`...  Welcome to DasMemeGenerator Page  ...
-            Enter details to way to my Page `);
+
 let Vname = prompt("Enter Your Name : ").toLowerCase();
-Vname = Vname[0].toUpperCase() + Vname.slice(1);
+Vname = Vname!==''? Vname[0].toUpperCase() + Vname.slice(1):'User';
 alert(`Hello ${Vname},
-Lets Create & Share Memes of Fun on Your Own`);
+Lets Create & Share Memes of Fun on Your Own`,);
 ////////// 
 
 const generatedMeme = document.getElementById('generated-meme');
