@@ -186,21 +186,6 @@ button{
   transform: rotate(90deg);
 }
 
-#input-img-box {
-  display: none;
-  object-fit: contain;
-  background-color: lightblue;
-}
-#input-img-text {
-  display: none;
-  text-align: center;
-}
-#input-img1,
-#input-img2 {
-  display: none;
-  width: 100%;
-}
-
 #generated-meme {
   display: none;
   opacity: 0;
@@ -290,6 +275,9 @@ footer {
   input {
     margin: 2px auto;
   }
+  #canvas{
+    width: 100vw;
+  }
 }
 /*  LARGE MOBILE SCREEN */
 @media screen and (min-width: 321px) and (max-width: 768px) {
@@ -301,6 +289,9 @@ footer {
   }
   input {
     margin: 2px auto;
+  }
+  #canvas{
+    width: 100vw;
   }
 }
 /*  TABLET SCREEN */
