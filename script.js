@@ -1,6 +1,6 @@
 //////////
 
-let Vname = prompt("Enter Your Name : ").toLowerCase();
+let Vname = prompt("Enter Your Name : ").toLowerCase().trim();
 Vname = Vname!==''? Vname[0].toUpperCase() + Vname.slice(1):'User';
 alert(`Hello ${Vname},
 Lets Create & Share Memes of Fun on Your Own`,);
@@ -25,11 +25,13 @@ document.querySelector('form').addEventListener('submit', function (e) {
   } else if (imageFile.files.length === 0 && imageUrl === '') {
     alert(`Please Add Image-File or Image-Url ${Vname}`);
   } else if (imageFile.files.length !== 0 && imageUrl === '') {
-    //console.log("imageFile is added");
+    console.error("imageFile is added");
     createImageViaFile(imageFile.files[0]);
   } else if (imageFile.files.length === 0 && imageUrl !== '') {
-    //console.log("imageUrl is added");
+    console.error("imageUrl is added");
     createImageViaUrl(imageUrl);
+  } else if(imageFile.files.length !== 0 && imageUrl !== ''){
+    alert(`Add only One Image input ${Vname}`);
   } else {
     console.error("No Operation Instructed.")
     return;
@@ -40,7 +42,9 @@ document.querySelector('form').addEventListener('submit', function (e) {
 });// forms eventlistener ends
 
 // Get the button element by its ID
+const generated_text = document.getElementById("generated-text");
 const download_btn = document.getElementById('download-btn');
+const share_meme_btn = document.getElementById('sharememe-btn');
 const canvas = document.getElementById('canvas');
 
 // Add a click event listener to the button
@@ -49,20 +53,25 @@ download_btn.addEventListener('click', () => {
   
   downloadImage(canvas, 'Das_memes.png')
   .then(() => {
-    //console.log('The image has been downloaded');
+    console.error('The image has been downloaded');
   })
   .catch(err => {
-    //console.log('Error downloading image: ', err);
+    console.error('Error downloading image: ', err);
   });  
 });
 
 // Resetting page with button
 const reset_btn = document.getElementById("reset-btn");
 reset_btn.addEventListener("click",()=> {
-  location.reload()
-  alert("Are You Ok With Page Resetting ?")
-  //console.log("Page Resetted.")
-}) 
+  canvas.style.display = "none";
+  download_btn.style.display = "none";
+  generated_text.style.display = "none";
+  share_meme_btn.style.display = "none";
+  //alert("Are You Ok With Page Resetting ?")
+});
+
+// adding click event for sharing created meme
+share_meme_btn.addEventListener('click',shareMemeImage);
 
 //createImageViaFile function starts
 function createImageViaFile(convertingImage) {
@@ -71,6 +80,7 @@ function createImageViaFile(convertingImage) {
   image.src = imageFilePath;
 
   image.addEventListener("load", () => {
+    canvas.style.display ="block";
     updateMemeCanvas(canvas, image, document.getElementById('top-text').value, document.getElementById('bottom-text').value);
     const generated_text = document.getElementById("generated-text");
     generated_text.style.display = "block";
@@ -83,10 +93,12 @@ function createImageViaFile(convertingImage) {
     generatedMeme.style.transition = "scroll-behavior 1s ease-in-out, opacity 1s ease-in-out";
 
     const download_btn = document.getElementById("download-btn");
-    download_btn.style.display = "block";
-    download_btn.style.transition = "opacity 2s ease-in-out";
-    generatedMeme.style.opacity = "1";
-    download_btn.style.opacity = "1";
+    const share_meme_btn = document.getElementById('sharememe-btn');
+
+    download_btn.style.display = share_meme_btn.style.display = "block";
+    download_btn.style.transition = share_meme_btn.style.transition = "opacity 2s ease-in-out";
+    generatedMeme.style.opacity = generatedMeme.style.opacity = "1";
+    download_btn.style.opacity = share_meme_btn.style.opacity = "1";
   });
   //console.log("convertingImage runned");
 }
@@ -103,6 +115,7 @@ function createImageViaUrl(convertingImage) {
     img.setAttribute("src", convertingImage);
 
     // ===== CANVAS =====
+    canvas.style.display ="block";
     updateMemeCanvas(canvas, img, document.getElementById('top-text').value, document.getElementById('bottom-text').value);
 
     const generated_text = document.getElementById("generated-text");
@@ -114,10 +127,12 @@ function createImageViaUrl(convertingImage) {
     generatedMeme.style.transition = "scroll-behavior 1s ease-in-out, opacity 1s ease-in-out";
 
     const download_btn = document.getElementById("download-btn");
-    download_btn.style.display = "block";
-    download_btn.style.transition = "opacity 2s ease-in-out";
-    generatedMeme.style.opacity = "1";
-    download_btn.style.opacity = "1";
+    const share_meme_btn = document.getElementById('sharememe-btn');
+
+    download_btn.style.display = share_meme_btn.style.display = "block";
+    download_btn.style.transition = share_meme_btn.style.transition = "opacity 2s ease-in-out";
+    generatedMeme.style.opacity = generatedMeme.style.opacity = "1";
+    download_btn.style.opacity = share_meme_btn.style.opacity = "1";
   };
 
   // Set the image source
@@ -129,7 +144,7 @@ function updateMemeCanvas(canvas, image, topText, bottomText) {
   const ctx = canvas.getContext("2d");
   const width = image.width;
   const height = image.height;
-  const fontSize = Math.floor(width / 10);
+  const fontSize = Math.floor(width / 15);
   const yOffset = height / 25;
 
   // Update canvas background
@@ -154,6 +169,7 @@ function updateMemeCanvas(canvas, image, topText, bottomText) {
   ctx.textBaseline = "bottom";
   ctx.strokeText(bottomText, width / 2, height - yOffset);
   ctx.fillText(bottomText, width / 2, height - yOffset);
+  
 }
 
 // =====================================
@@ -192,3 +208,54 @@ async function downloadImage(data, nameOfDownload = "Das_MemeGeneration.jpg") {
   // Revoke the object URL to free up resources
   window.URL.revokeObjectURL(href);
 }// download fun ends
+
+////// SHARE option function
+function shareWebpage() {
+  if (navigator.share) {
+    navigator.share({
+      title: 'Das-MemeGenerator',
+      text: 'Check out this awesome MEME Generator webpage!',
+      url: window.location.href
+    })
+    .then(() => console.log('Shared successfully'))
+    .catch((error) => console.error('Error sharing:', error));
+  }
+  else {
+    alert('Web Share API is not supported on this browser.');
+  }
+}
+
+///////////  SHARING MEME ////////////
+function shareMemeImage() {
+  // Assuming you have a canvas element named 'canvas'
+  const canvas = document.getElementById('canvas');
+
+  if (navigator.share && canvas) {
+    // Convert the canvas content to a data URL
+    const imageDataUrl = canvas.toDataURL('image/png');
+
+    // Use the Web Share API to share the image
+    navigator.share({
+      files: [new File([dataURLtoBlob(imageDataUrl)], 'Das-MemeGen.png', { type: 'image/png' })],
+      title: 'Check out this awesome meme I created!',
+      text: 'Via Das-MemeGenerator',
+    })
+    .then(() => console.log('Shared successfully'))
+    .catch((error) => console.error('Error sharing:', error));
+  } else {
+    alert('Web Share API is not supported on this browser or canvas element not found.');
+  }
+}
+
+// Helper function to convert data URL to Blob
+function dataURLtoBlob(dataURL) {
+  const arr = dataURL.split(',');
+  const mime = arr[0].match(/:(.*?);/)[1];
+  const bstr = atob(arr[1]);
+  let n = bstr.length;
+  const u8arr = new Uint8Array(n);
+  while (n--) {
+    u8arr[n] = bstr.charCodeAt(n);
+  }
+  return new Blob([u8arr], { type: mime });
+}

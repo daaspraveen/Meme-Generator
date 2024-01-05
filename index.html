@@ -38,18 +38,29 @@
             <button type="reset" title="reset" id="reset-btn">Reset</button>
         </form>
 
-        <div src="" alt="Meme" id="generated-meme">
+        <div id="generated-meme">
             <canvas id="canvas"></canvas>
         </div>
 
+        <button type="button" id="sharememe-btn">
+            <span class="memebelow-btn flex">
+                <img src="media/sharefile.png" alt="" class="sharefile-img">
+                <p>Share Img</p>
+            </span>
+        </button>
         <button type="button" id="download-btn">
-            <span class="flex">
+            <span class="memebelow-btn flex">
                 <p>Download Meme </p>
                 <img src="media/download.gif" class="download-img" alt="">    
             </span>
         </button>
-
+        
+        <img src="media/share.png" onclick="shareWebpage()" id="share-img" alt="">
+            
     </div>
+
+    
+
     <footer>
        <p id="foot-para">&copy;2024 Reserved & Developed by <a href="https://praveendas.netlify.app/" id="foot-link">PraviDas</a></p>
     </footer>

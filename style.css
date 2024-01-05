@@ -61,13 +61,11 @@ header p {
   color: #ff5353;
 }
 .container {
-  width: 100vw;
-  outline: 0;
   overflow-x: hidden;
   margin: auto;
+  padding: 0;
   margin-bottom: 50px;
   padding-bottom: 10px;
-  padding: 0;
   flex-direction: column;
 }
 
@@ -108,7 +106,7 @@ input[type="text"]:hover {
 }
 input[type="text"]:focus {
   outline: none;
-  background-image: linear-gradient(45deg, #517e8499, #9e5c638f);
+  background-color:lightgray ;
   box-shadow: 0 2px 4px rgb(1 1 1);
 }
 .optional-word {
@@ -168,8 +166,9 @@ button{
   display: none;
   text-align: center;
   opacity: 1;
+  text-wrap: balance;
   transition: opacity 1s ease-in-out;
-  font-size: clamp(20px, 2rem, 30px);
+  font-size: clamp(16px, 2rem, 30px);
   font-weight: 600;
   color: rgba(255, 255, 255, 0.393);
   background-clip: text;
@@ -197,16 +196,18 @@ button{
   width: 100%;
   min-width: 250px;
   max-width: 300px;
-  aspect-ratio: 1/1;
+  max-height: 400px;
   object-fit: contain;
   height: max-content;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+#sharememe-btn,
 #download-btn {
-  background-color: #333;
+  background-color: #1e7db2;
+  color: #bdbdbd;
   padding: 2px 10px;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
   transition: backgroundColor 1s ease;
 
@@ -215,43 +216,48 @@ button{
   opacity: 0;
   margin-bottom: 10px;
 }
+#sharememe-btn{
+  background-color: #ca5619;
+}
+#sharememe-btn:hover{
+  background-color: #df5f1a;
+  color: #fff;
+}
+#download-btn:hover {
+  background-color: #208bc5;
+  color: #fff;
+}
+.memebelow-btn{
+  column-gap: 5px;
+}
+#sharememe-btn p,
 #download-btn p {
   display: inline;
   color: #ddd;
   font-weight: 500;
   font-size: 0.8rem;
 }
-#download-btn:active {
-  background-color: darkslategray;
-  color: #fff;
-}
+
+.sharefile-img,
 .download-img {
   width: 30px;
 }
 
-@keyframes imgAnim {
-  from {
-    width: 0px;
-  }
-  to {
-    width: 300px;
-  }
-}
-
-#canvasbox {
-  width: 50vw;
-  max-width: 600px;
-  min-width: 100px;
-
-  height: max-content;
-  aspect-ratio: 1/1;
+#share-img{
+  width: 40px;
+  padding: 2px;
+  margin-top: 5px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  border: 1px solid black;
+  box-shadow: -1px -1px 5px black,1px 1px 5px black;
 }
 footer {
   width: 100%;
   padding: 1px 2px;
   background-color: black;
   position: absolute;
-  bottom: 0;
+  bottom: -10px;
 }
 #foot-para {
   font-size: clamp(16px,0.9rem,20px);
@@ -270,13 +276,16 @@ footer {
     background-image: url(media/bg-small.jpg);
   }
   form {
-    min-width: 95vw;
+    width: 95vw;
   }
   input {
     margin: 2px auto;
   }
+  #generated-text{
+    font-size: 16px;
+  }
   #canvas{
-    width: 100vw;
+    max-width: 98vw;
   }
 }
 /*  LARGE MOBILE SCREEN */
@@ -285,13 +294,16 @@ footer {
     background-image: url(media/bg-medium.jpg);
   }
   form {
-    min-width: 95vw;
+    width: 95vw;
   }
   input {
     margin: 2px auto;
   }
+  #generated-text{
+    font-size: 20px;
+  }
   #canvas{
-    width: 100vw;
+    max-width: 98vw;
   }
 }
 /*  TABLET SCREEN */
@@ -300,7 +312,10 @@ footer {
     background-image: url(media/bg-large.jpg);
   }
   form {
-    min-width: 70vw;
+    width: 70vw;
+  }
+  #canvas{
+    max-width: 80vw;
   }
 }
 /* DESKTOP AND LARGER SCREEN */
@@ -309,6 +324,9 @@ footer {
     background-image: url(media/bg-orginial\ xlarge.jpg);
   }
   form {
-    min-width: 600px;
+    width: 600px;
+  }
+  #canvas{
+    max-width: 600px;
   }
 }
