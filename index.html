@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meme Generator using Text and Image File or Image Url">
+    <meta name="keywords" content="Das-MemeGen,Meme Maker,Meme Generator,DasMemeGen,Memes,Meme">
+    <meta name="google-adsense-account" content="ca-pub-1016291059158165">
+
     <title>Das-Meme Generator</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="media/das logo.png" type="image/x-icon">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-35X0VPDM8N"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-35X0VPDM8N');
+    </script>
+    <!-- Ads-->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1016291059158165"
+        crossorigin="anonymous">
+    </script>
+    
 </head>
 <body class="bg-img">
     <header>
@@ -42,43 +59,28 @@
             <canvas id="canvas"></canvas>
         </div>
 
-        <button type="button" id="sharememe-btn">
+        <button type="button" id="sharememe-btn" class="shareDownload-btn">
             <span class="memebelow-btn flex">
                 <img src="media/sharefile.png" alt="" class="sharefile-img">
                 <p>Share Img</p>
             </span>
         </button>
-        <button type="button" id="download-btn">
+        <button type="button" id="download-btn" class="shareDownload-btn">
             <span class="memebelow-btn flex">
                 <p>Download Meme </p>
                 <img src="media/download.gif" class="download-img" alt="">    
             </span>
         </button>
         
-        <img src="media/share.png" onclick="shareWebpage()" id="share-img" alt="">
-            
+        <img src="media/share.png" onclick="shareWebpage()" id="share-img" alt="">        
     </div>
 
     
-
     <footer>
        <p id="foot-para">&copy;2024 Reserved & Developed by <a href="https://praveendas.netlify.app/" id="foot-link">PraviDas</a></p>
     </footer>
 
     <!-- Website Script-->
     <script src="script.js"></script>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-35X0VPDM8N"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-35X0VPDM8N');
-    </script>
-    
-    <!-- Ads-->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1016291059158165"
-     crossorigin="anonymous"></script>
 </body>
 </html>

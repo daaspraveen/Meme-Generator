@@ -1,10 +1,3 @@
-//////////
-
-let Vname = prompt("Enter Your Name : ").toLowerCase().trim();
-Vname = Vname!==''? Vname[0].toUpperCase() + Vname.slice(1):'User';
-alert(`Hello ${Vname},
-Lets Create & Share Memes of Fun on Your Own`,);
-////////// 
 
 const generatedMeme = document.getElementById('generated-meme');
 
@@ -19,11 +12,11 @@ document.querySelector('form').addEventListener('submit', function (e) {
 
   //  INPUT VALIDATIONS
   if (topText === '' && bottomText === '') {
-    alert(`Please Enter the Texts ${Vname}`);
+    alert(`Please Enter the Texts`);
     console.error("INVALID INPUT DATA");
     return;
   } else if (imageFile.files.length === 0 && imageUrl === '') {
-    alert(`Please Add Image-File or Image-Url ${Vname}`);
+    alert(`Please Add Image-File or Image-Url`);
   } else if (imageFile.files.length !== 0 && imageUrl === '') {
     console.error("imageFile is added");
     createImageViaFile(imageFile.files[0]);
@@ -31,7 +24,7 @@ document.querySelector('form').addEventListener('submit', function (e) {
     console.error("imageUrl is added");
     createImageViaUrl(imageUrl);
   } else if(imageFile.files.length !== 0 && imageUrl !== ''){
-    alert(`Add only One Image input ${Vname}`);
+    alert(`Add only One Image input`);
   } else {
     console.error("No Operation Instructed.")
     return;

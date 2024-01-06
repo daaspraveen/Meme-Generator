@@ -76,7 +76,7 @@ form {
   margin: 20px auto;
 
   overflow-wrap: break-word;
-  background-image: linear-gradient(90deg, rgb(159 92 99), #4d8086);
+  background-color: steelblue;
   flex-direction: column;
   border-radius: 20px;
 }
@@ -199,11 +199,10 @@ button{
   max-height: 400px;
   object-fit: contain;
   height: max-content;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0);
 }
 
-#sharememe-btn,
-#download-btn {
+.shareDownload-btn{
   background-color: #1e7db2;
   color: #bdbdbd;
   padding: 2px 10px;
@@ -215,6 +214,9 @@ button{
   flex-direction: row;
   opacity: 0;
   margin-bottom: 10px;
+}
+.shareDownload-btn:hover{
+  box-shadow: 2px 2px 4px black, -2px -2px 4px black;
 }
 #sharememe-btn{
   background-color: #ca5619;
@@ -291,7 +293,7 @@ footer {
 /*  LARGE MOBILE SCREEN */
 @media screen and (min-width: 321px) and (max-width: 768px) {
   .bg-img {
-    background-image: url(media/bg-medium.jpg);
+    background-image: url(media/bg-small.jpg);
   }
   form {
     width: 95vw;
@@ -309,7 +311,7 @@ footer {
 /*  TABLET SCREEN */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .bg-img {
-    background-image: url(media/bg-large.jpg);
+    background-image: url(media/bg-medium.jpg);
   }
   form {
     width: 70vw;
@@ -321,7 +323,7 @@ footer {
 /* DESKTOP AND LARGER SCREEN */
 @media screen and (min-width: 1025px) {
   .bg-img {
-    background-image: url(media/bg-orginial\ xlarge.jpg);
+    background-image: url(media/bg-large.jpg);
   }
   form {
     width: 600px;
