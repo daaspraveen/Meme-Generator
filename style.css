@@ -15,9 +15,9 @@ body {
   outline: 0;
   padding: 0;
   min-height: 100vh;
+  overflow: hidden;
   position: relative;
   overflow-x: hidden;
-  
 
   box-sizing: border-box;
   font-family: 'Josefin Sans', sans-serif;
@@ -345,9 +345,9 @@ footer {
 }
 /* DESKTOP AND LARGER SCREEN */
 @media screen and (min-width: 1025px) {
-  .bg-img {
+/*   .bg-img {
     background-image: url(media/bg-large.jpg);
-  }
+  } */
   form {
     width: 600px;
   }
