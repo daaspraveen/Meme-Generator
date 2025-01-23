@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
-
+* {
+  box-sizing: border-box;
+}
 html {
   width: 100vw;
   overflow-x: hidden;
@@ -14,7 +16,7 @@ body {
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
-  overflow-y: scroll;
+  
 
   box-sizing: border-box;
   font-family: 'Josefin Sans', sans-serif;
@@ -28,17 +30,20 @@ body {
   align-items: center;
 }
 .bg-img {
-  background-size: cover;
+  background: #16222A;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #3A6073, #16222A);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #3A6073, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+/*   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 /*--------------------*/
 header {
   width: 100%;
   padding: 8px 1px;
   margin: 0;
-  overflow-y: auto;
   box-sizing: border-box;
   background-color: #161616f7;
 }
@@ -61,58 +66,61 @@ header p {
   color: #ff5353;
 }
 .container {
-  overflow-x: hidden;
   margin: auto;
-  padding: 0;
+  padding: 10px;
   margin-bottom: 50px;
   padding-bottom: 10px;
   flex-direction: column;
 }
 
 form {
+  width: 100%;
   max-width: 600px;
   min-width: 250px;
-  padding: 20px 5px;
+  padding: 30px 15px;
   margin: 20px auto;
 
   overflow-wrap: break-word;
   background-color: steelblue;
   flex-direction: column;
   border-radius: 20px;
+  backdrop-filter: blur(16px) saturate(92%);
+  -webkit-backdrop-filter: blur(16px) saturate(92%);
+  background-color: rgb(78 116 148 / 10%);
 }
 
 label {
   font-weight: bold;
   color: #fff;
-  text-shadow: 2px 0px 5px #000;
+  text-shadow: 2px 0px 5px #111;
   margin-bottom: 10px;
-  font-size: clamp(18px,2rem,26px);
+  font-size: clamp(18px,1.5rem,26px);
 }
 
 input[type="text"] {
   width: 90%;
   margin: 5px auto;
   padding: 10px;
-  background-color: #d8d6d68a;
+  color: #fff;
+  background-color: #ffffff20;
   font-size: 18px;
   letter-spacing: 1.5px;
   border: 2px solid #9b9b9b8a;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border 0s 0.2s ease-in-out;
 }
 input[type="text"]:hover {
-  border: 2px solid #999999;
-  transition: border 0.2s ease-in-out;
+  border-color: #999999;
 }
 input[type="text"]:focus {
   outline: none;
-  background-color:lightgray ;
   box-shadow: 0 2px 4px rgb(1 1 1);
 }
 .optional-word {
   font-size: 0.9rem;
   text-shadow: none;
-  color: #000000b1;
+  color: #ffffff90;
   font-style: italic;
   font-weight: lighter;
 }
@@ -121,7 +129,12 @@ input[type="text"]:focus {
   border: 1px solid #ddd;
   padding: 10px;
 }
-
+button[type="submit"]{
+  background: #00bf8f;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #001510, #00bf8f);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #001510, #00bf8f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin-bottom: 20px;
+}
 button[type="submit"],
 button[type="reset"] {
   background-color: #333;
@@ -136,6 +149,7 @@ button[type="reset"] {
 button[type="reset"] {
   background-color: #4682b4;
   transition: none;
+  padding: 6px 20px;
 }
 #choose-file {
   width: 220px;
@@ -274,9 +288,9 @@ footer {
 /*//////////////////////////////////////// */
 /*  MOBILE SMALL SCREEN */
 @media screen and (max-width: 320px) {
-  .bg-img {
+/*   .bg-img {
     background-image: url(media/bg-small.jpg);
-  }
+  } */
   form {
     width: 95vw;
   }
@@ -292,9 +306,9 @@ footer {
 }
 /*  LARGE MOBILE SCREEN */
 @media screen and (min-width: 321px) and (max-width: 768px) {
-  .bg-img {
+/*   .bg-img {
     background-image: url(media/bg-small.jpg);
-  }
+  } */
   form {
     width: 95vw;
   }
@@ -310,9 +324,9 @@ footer {
 }
 /*  TABLET SCREEN */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .bg-img {
+/*   .bg-img {
     background-image: url(media/bg-medium.jpg);
-  }
+  } */
   form {
     width: 70vw;
   }
