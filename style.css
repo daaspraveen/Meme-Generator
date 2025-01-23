@@ -95,7 +95,7 @@ label {
   color: #fff;
   text-shadow: 2px 0px 5px #111;
   margin-bottom: 10px;
-  font-size: clamp(18px,1.5rem,26px);
+  font-size: clamp(16px, 1rem, 24px);
 }
 
 input[type="text"] {
