@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 * {
   box-sizing: border-box;
+  color: #fff;
 }
 html {
   width: 100vw;
@@ -105,13 +106,13 @@ input[type="text"] {
   background-color: #ffffff20;
   font-size: 18px;
   letter-spacing: 1.5px;
-  border: 2px solid #9b9b9b8a;
+  border: 2px solid #transparent;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: border 0s 0.2s ease-in-out;
 }
 input[type="text"]:hover {
-  border-color: #999999;
+  border-color: #fff;
 }
 input[type="text"]:focus {
   outline: none;
@@ -129,27 +130,33 @@ input[type="text"]:focus {
   border: 1px solid #ddd;
   padding: 10px;
 }
-button[type="submit"]{
-  background: #00bf8f;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #001510, #00bf8f);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #001510, #00bf8f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  margin-bottom: 20px;
-}
 button[type="submit"],
 button[type="reset"] {
   background-color: #333;
   color: #ccc;
+  font-size: 15px;
   margin: 5px;
-  padding: 10px 20px;
+  padding: 12px 25px;
+  font-size: 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.5s ease;
 }
+button[type="submit"]{
+  background: forestgreen;  /* fallback for old browsers */
+/*   background: -webkit-linear-gradient(to right, #001510, #00bf8f);  /* Chrome 10-25, Safari 5.1-6 */ */
+/*   background: linear-gradient(to right, #001510, #00bf8f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ */
+  margin-bottom: 20px;
+  color: #000;
+  font-weight: 600;
+}
 button[type="reset"] {
   background-color: #4682b4;
   transition: none;
-  padding: 6px 20px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
 }
 #choose-file {
   width: 220px;
@@ -158,6 +165,7 @@ button[type="reset"] {
 .or-para {
   margin: 0.7rem;
   font-size: 1.4rem;
+  color: #ffffff90;
 }
 button[type="submit"]:hover, #download-btn:hover {
   background-color: #111;
