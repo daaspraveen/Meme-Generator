@@ -106,7 +106,8 @@ input[type="text"] {
   background-color: #ffffff20;
   font-size: 18px;
   letter-spacing: 1.5px;
-  border: 2px solid #transparent;
+  border: 2px solid transparent;
+  outline: none;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: border 0s 0.2s ease-in-out;
