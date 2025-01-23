@@ -226,10 +226,11 @@ button{
 }
 
 .shareDownload-btn{
-  background-color: #1e7db2;
+  background-color: #00131e;
   color: #bdbdbd;
-  padding: 2px 10px;
-  border-radius: 25px;
+  padding: 2px 15px;
+  border-radius: 8px;
+  border: none;
   cursor: pointer;
   transition: backgroundColor 1s ease;
 
@@ -265,7 +266,7 @@ button{
 
 .sharefile-img,
 .download-img {
-  width: 30px;
+  width: 20px;
 }
 
 #share-img{
